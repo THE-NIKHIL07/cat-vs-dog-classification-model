@@ -1,0 +1,36 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.mlapp/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Model weights and outputs
+# *.h5
+# *.keras
+*.ckpt
+
+# Logs and temporary files
+*.log
+*.tmp
+*.out
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/
+
+# PyCharm / VSCode settings
+.idea/
+.vscode/
+
+.ipynb_checkpoints
