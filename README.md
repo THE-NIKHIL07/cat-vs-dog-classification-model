@@ -44,7 +44,7 @@ cat-vs-dog/
 Copy and run the following commands:
 
 ```bash
-git clone 
+git clone https://github.com/THE-NIKHIL07/cat-vs-dog-classification-model.git
 
 pip install -r requirements.txt
 streamlit run app.py
