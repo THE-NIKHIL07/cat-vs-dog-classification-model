@@ -7,17 +7,58 @@ from tensorflow.keras.applications.efficientnet import preprocess_input
 
 st.set_page_config(page_title="Cat vs Dog Classifier", layout="wide")
 
-st.markdown("""
-    <style>
-    .main { background-color: #FFFFFF; }
-    .stSidebar { background-color: #f8f9fa; }
-    .stButton>button { width: 100%; border-radius: 8px; font-weight: bold; }
-    .black-text { color: black; font-weight: bold; font-size: 24px; }
-    .small-black-text { color: black; font-size: 18px; }
-    .progress-bar-container { width: 100%; background-color: #eee; border-radius: 5px; height: 25px; }
-    .progress-bar { height: 100%; border-radius: 5px; text-align: center; color: white; font-weight: bold; }
-    </style>
-""", unsafe_allow_html=True)
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+header {visibility: hidden;}
+footer {visibility: hidden;}
+footer:after {
+    content:'Made by THE-NIKHIL07 © 2026';
+    display:block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #000000;
+    padding: 5px 0;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+/* Sidebar Background to Black */
+[data-testid="stSidebar"] {
+    background-color: #000000 !important;
+}
+
+/* Sidebar Text to White */
+[data-testid="stSidebar"] .stText, 
+[data-testid="stSidebar"] label, 
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] .stRadio > label {
+    color: white !important;
+}
+
+/* Force the Open/Close Arrow to be Black */
+[data-testid="stSidebarCollapseButton"] svg {
+    fill: black !important;
+    color: black !important;
+    width: 35px !important;
+    height: 35px !important;
+}
+
+.main { background-color: #FFFFFF; }
+.stSidebar { background-color: #000000; }
+.stButton>button { width: 100%; border-radius: 8px; font-weight: bold; }
+.black-text { color: black; font-weight: bold; font-size: 24px; }
+.small-black-text { color: black; font-size: 18px; }
+.progress-bar-container { width: 100%; background-color: #eee; border-radius: 5px; height: 25px; }
+.progress-bar { height: 100%; border-radius: 5px; text-align: center; color: white; font-weight: bold; }
+</style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 @st.cache_resource
 def load_trained_model():
@@ -28,8 +69,8 @@ def load_trained_model():
         return None
 
 model = load_trained_model()
-
 IMG_SIZE = 224
+
 def prepare_image(img):
     img = img.resize((IMG_SIZE, IMG_SIZE))
     img_array = np.array(img)
@@ -58,7 +99,6 @@ else:
         input_image = Image.open(uploaded_file)
 
 st.markdown('<p class="black-text">🐾 Cat vs Dog Prediction</p>', unsafe_allow_html=True)
-
 col1, col2 = st.columns([1, 1], gap="large")
 
 with col1:
