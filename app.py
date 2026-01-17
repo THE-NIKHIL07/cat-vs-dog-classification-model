@@ -143,3 +143,6 @@ with st.expander("Model Parameters & Preprocessing Info"):
         <p class="small-black-text"><b>Architecture:</b> EfficientNet (Transfer Learning)</p>
         <p class="small-black-text"><b>Preprocessing:</b> EfficientNet-specific scaling</p>
     """, unsafe_allow_html=True)
+
+st.markdown('<div class="footer-spacer"></div>', unsafe_allow_html=True)
+st.markdown('<p style="color: black; text-align: center; font-weight: bold;">made by THE-NIKHIL07 &copy; 2026</p>', unsafe_allow_html=True)
