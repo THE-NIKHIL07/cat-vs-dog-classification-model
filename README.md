@@ -3,6 +3,7 @@
 A professional web-based image classification application built with **Streamlit** and **TensorFlow**. This app allows users to predict whether an image contains a cat or a dog using a high-precision EfficientNetB0 backbone trained on a custom dataset.
 
 ---
+🚀 **[Live Demo](https://cat-vs-dog-classification-model-07.streamlit.app/)**
 
 ## 📊 Model Information & Architecture
 The model uses transfer learning based on the EfficientNetB0 architecture, optimized for binary classification.
